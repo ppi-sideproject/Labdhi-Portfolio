@@ -23,6 +23,7 @@
 
         header{
             background-color: rgb(230, 230, 250);
+            color: rgb(128, 96, 192);
             padding: 15px 5%;
             display: flex;
             align-items: center;
@@ -45,17 +46,20 @@
             color: white;
         }
 
-        /* .hero-section::before{
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.4); 
-            z-index: -1;
-        } */
+        .btn {
+            padding: 12px 25px;
+            background: rgb(147, 102, 209);
+            color: white;
+            border: none;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 16px;
+            transition: 0.3s;
+        }
 
+        .btn:hover {
+            background: rgb(80, 40, 129); 
+        }
         .hero-content{
             position: relative; 
             z-index: 2; 
@@ -79,9 +83,16 @@
             color: black;
         }
 
+        .form-section{
+            max-width: 100%;
+            padding: 25px;
+            text-align: center;
+            background-color: rgb(197, 197, 237);
+        }
+
         footer{
-        background: rgb(230, 230, 250);
-        color: rgb(147, 112, 219);
+        background: rgb(147, 112, 219);
+        color: white;
         text-align: center;
         padding: 10px 0;
         bottom: 0%;
@@ -98,7 +109,8 @@
     <section class = "hero-section">
         <div class="hero-content">
             <h1>Join Purple Ribbon Project For Bangtan Sonyeondan</h1>
-        </div>
+            <a href="#join" class="btn">Join</a>
+            </div>
     </section>
 
     <section class="card">
@@ -109,7 +121,20 @@
         a purple ribbon during a photoshoot for Dispatch.
     </p>
     </section>
-    
+
+    <section class="form-section" id="btn">
+        <form>
+            <h3>Fill the Form to join project</h3><br>
+            <label>Full Name : </label>
+            <input type="text" placeholder="Enter your name here" required><br>
+            <label>Email Id : </label>
+            <input type="email" placeholder="Enter your email here" required><br>
+            <label>Country : </label>
+            <input type="text" placeholder="Choose the country"><br>
+            <label>Phone Number : </label>
+            <input type="number" placeholder="Enter your phone number here" required><br>
+        </form>
+    </section>
 
     <footer>
         <p>&copy; 2025 Purple Ribbon Project. All Rigths Reserved</p>
