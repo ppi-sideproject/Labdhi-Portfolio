@@ -5,44 +5,88 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Purple Ribbon Project</title>
     <style>
-        body{
+        *{
             margin: 0;
-            height: 100vh;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body{
+            margin: 0; 
+            background-color: #f5f5f5;
+            color: #333333;
+            line-height: 1.6;
+            min-height: 100vh;
             display: flex;
             flex-direction: column;
-            background-color: rgb(208, 148, 239);
         }
 
         header{
-            background-color: rgb(172, 196, 226);
-            color:rgb(240, 142, 142);
-            text-align:center;
+            background-color: rgb(230, 230, 250);
+            padding: 15px 5%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border-bottom: 3px solid rgb(147, 112, 219);
         }
 
         .hero-section{
-            background: url("https://i.pinimg.com/1200x/68/79/58/6879585945b448a29391e82e3edbcf95.jpg");
+            background-image: url("https://i.pinimg.com/736x/10/85/4e/10854e05c4dab9070a3f8cd9d63cea17.jpg");
             width: 100%;
             height: 500px;
             display: flex;
             justify-content: center;
-            align-items: center;
+            align-items: flex-end;
             text-align: center;
             background-size: cover;
             background-position: center;
+            position: relative;
+            z-index: 1;
+            color: white;
         }
 
-        .p{
+        /* .hero-section::before{
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.4); 
+            z-index: -1;
+        } */
+
+        .hero-content{
+            position: relative; 
+            z-index: 2; 
+            padding: 20px;
+        }
+
+        .hero-content h1{
+            font-size: 3em;
+            letter-spacing: 2px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        .card{
+            width: 100%;
+            padding: 25px;
+            text-align: justify;
+            background-color: rgb(244, 244, 248);
+        }
+
+        .card p{
             color: black;
         }
 
         footer{
-        background: Black;
-        color:white;
+        background: rgb(230, 230, 250);
+        color: rgb(147, 112, 219);
         text-align: center;
         padding: 10px 0;
-        /* bottom: 0%;
+        bottom: 0%;
         left: 0%;
-        margin-top: auto; */
+        margin-top: auto;
     }
     </style>
 </head>
@@ -53,20 +97,19 @@
 
     <section class = "hero-section">
         <div class="hero-content">
-            <h3>Purple Ribbon Project For Bangtan Sonyeondan</h3>
+            <h1>Join Purple Ribbon Project For Bangtan Sonyeondan</h1>
         </div>
     </section>
 
+    <section class="card">
     <p>
         The Purple Ribbon Project was started by ARMY(BTS Fandom) in 2018. Fans used purple ribbons and made a human 
         chain at the airport so that the members could move easily without any hassle. The initiative once again 
         showed how much fans care for the group. Following the project, V was so touched by it that he even posed with 
         a purple ribbon during a photoshoot for Dispatch.
     </p>
+    </section>
     
-
-
-    <!-- <a href="https://github.com/Labdhipatel">Visit my Github Profile</a> -->
 
     <footer>
         <p>&copy; 2025 Purple Ribbon Project. All Rigths Reserved</p>
