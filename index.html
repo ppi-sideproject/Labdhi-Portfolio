@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Purple Ribbon Project</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" rel="stylesheet">
     <style>
         *{
             margin: 0;
@@ -13,7 +14,7 @@
 
         body{
             margin: 0; 
-            background-color: #f5f5f5;
+            background-color: #faf8f8;
             color: #333333;
             line-height: 1.6;
             min-height: 100vh;
@@ -21,23 +22,62 @@
             flex-direction: column;
         }
 
-        header{
-            background-color: rgb(230, 230, 250);
-            color: rgb(128, 96, 192);
+        header {
+            position: sticky;
+            top: 0;
+            /* left: 0; */
+            width: 100%;
+            /* z-index: 1000; */
+            background-color: rgb(230 , 230 , 250); 
+            color: rgb(128 ,96,192); 
             padding: 15px 5%;
             display: flex;
+            justify-content: space-between; 
             align-items: center;
-            justify-content: space-between;
-            border-bottom: 3px solid rgb(147, 112, 219);
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); 
+        }
+        header h4 {
+            color: rgb(128 ,96,192); 
+            font-weight: 700;
+            font-size: 1.2em;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 25px;
+        }
+        
+        nav a {
+            color: rgb(128 ,96,192);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 1em;
+            transition: color 0.3s;
+        }
+
+        .menu{
+            display: none;
+        }
+        
+        nav a:hover {
+            color: black;
+        }
+
+        section{
+            padding: 80px 50px;
+            min-height: fit-content;
+            scroll-margin-top: 80px;
         }
 
         .hero-section{
-            background-image: url("https://i.pinimg.com/736x/10/85/4e/10854e05c4dab9070a3f8cd9d63cea17.jpg");
+            background-image: url("https://i.pinimg.com/736x/7e/b4/63/7eb463b51c87eb5a5e0ea08ec621e3c7.jpg");
             width: 100%;
             height: 500px;
             display: flex;
             justify-content: center;
-            align-items: flex-end;
+            align-items: end;
+            padding: 100px;
             text-align: center;
             background-size: cover;
             background-position: center;
@@ -67,31 +107,151 @@
         }
 
         .hero-content h1{
-            font-size: 3em;
+            font-size: 2.5em;
             letter-spacing: 2px;
             text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
         }
 
         .card{
-            width: 100%;
-            padding: 25px;
+            max-width: 1200px;
+            padding: 30px 60px 45px 60px;
+            margin: 20px auto;
             text-align: justify;
-            background-color: rgb(244, 244, 248);
+            background-color: rgb(225, 225, 246);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+        }
+
+        .card h3 {
+            color: purple;
+            margin-bottom: 10px;
+            font-size: xx-large;
+            text-align: center;
+            font-weight: bolder;
         }
 
         .card p{
             color: black;
         }
 
-        .form-section{
-            max-width: 100%;
-            padding: 25px;
+        .image-gallery {
+            display: grid;
+            grid-template-columns: 1fr; 
+            gap: 20px;
+            padding-top: 20px;
+            border-top: 1px dashed #e6e6fa;
+        }
+
+        @media (min-width: 600px) {
+            .image-gallery {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (min-width: 900px) {
+            .image-gallery {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+    
+        .image-card { 
+            background-color: rgb(205, 205, 250);
+            border-radius: 6px;
+            overflow: hidden; 
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
             text-align: center;
-            background-color: rgb(197, 197, 237);
+            transition: transform 0.3s ease;
+        }
+
+        .image-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+        }
+
+        .image-card img {
+            width: 100%;
+            height: 250px; 
+            object-fit: cover; 
+        }
+
+        .image-card-content {
+            padding: 15px 10px;
+        }
+
+        .image-card-content h5 {
+            color: #4b0082;
+            font-size: 1em;
+            margin-bottom: 5px;
+        }
+
+        .image-card-content p {
+            font-size: 0.85em;
+            color: #333333;
+            text-align: center;
+            margin-bottom: 0;
+        }
+
+        .form-section {
+            width: 600px;
+            margin: 60px auto;
+            padding: 80px;
+            background-image: linear-gradient(to right, #833AB4 ,black);
+            border-radius: 4px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.8);
+        }
+        
+        .form-section h3 {
+            color: white;
+            margin-bottom: 20px;
+            font-size: xx-large;
+            text-align: center;
+            font-weight: bolder;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+            text-align: left; 
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: 800;
+            color: white;
+            font-size: large;
+        }
+
+        .form-section input,
+        .form-section select {
+            width: 100%;
+            padding: 10px;
+            border: 1.5px solid black;
+            border-radius: 4px;
+            font-size: 1em;
+            background-color: white;
+            box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.4);
+        }
+
+        .submit-button {
+            display: block;
+            width: 100%;
+            padding: 12px;
+            background-color: #ffffff;
+            color: #4b0082;
+            border: 1.5px solid;
+            border-radius: 4px;
+            font-size: 1.1em;
+            font-weight: 700;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            margin-top: 20px;
+        }
+
+        .submit-button:hover {
+            background-color: #f0e6ff;
         }
 
         footer{
-        background: rgb(147, 112, 219);
+        background: rgb(128,96,192);
         color: white;
         text-align: center;
         padding: 10px 0;
@@ -99,45 +259,188 @@
         left: 0%;
         margin-top: auto;
     }
+
+    @media(max-width: 480px){
+        .menu{
+            display: block;
+        }
+        nav{
+            display: none;
+        }
+    }
+
+   @media (max-width: 768px) {
+            header {
+                /* flex-direction: column;  */
+                align-items: center;
+                padding: 15px 20px;
+            }
+            nav ul {
+                gap: 15px; 
+                margin-top: 10px;
+                padding-left: 0;
+            }
+
+            section {
+                padding: 40px 15px; 
+                scroll-margin-top: 100px; 
+            }
+            
+            .card {
+                padding: 20px; 
+                margin: 20px 10px; 
+            }
+
+            .form-section {
+                padding: 30px 20px;
+                max-width: 95%;
+                width: auto;
+            }
+
+            .hero-section {
+                height: 350px;
+                padding: 50px 20px;
+            }
+
+            .hero-content h1 {
+                font-size: 1.8em; 
+            }
+        }
+        
     </style>
 </head>
 <body>
     <header>
-    <h4>Welcome to our Purple Ribbon Project</h4>
+    <h4>Welcome</h4>
+    
+    <nav>
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#about-card">About</a></li>
+            <li><a href="#join-section">Join</a></li>
+        </ul>
+    </nav>
+
+        <div class="menu"> 
+        <i class="fa-solid fa-bars"></i>
+        </div>
     </header>
 
     <section class = "hero-section">
         <div class="hero-content">
             <h1>Join Purple Ribbon Project For Bangtan Sonyeondan</h1>
-            <a href="#join" class="btn">Join</a>
+            <a href="#join-section" class="btn">Join</a>
             </div>
     </section>
 
-    <section class="card">
+    <section class="card" id="about-card">
+        <h3>About</h3>
     <p>
         The Purple Ribbon Project was started by ARMY(BTS Fandom) in 2018. Fans used purple ribbons and made a human 
         chain at the airport so that the members could move easily without any hassle. The initiative once again 
         showed how much fans care for the group. Following the project, V was so touched by it that he even posed with 
         a purple ribbon during a photoshoot for Dispatch.
     </p>
+
+    <div class="image-gallery">
+                                
+                <div class="image-card">
+                    <img src="https://i.pinimg.com/1200x/84/73/68/847368aa61e3911781fbc22838a0621a.jpg" alt="BTS fans forming a human chain with purple ribbons.">
+                    <div class="image-card-content">
+                        <h5>Airport Protection</h5>
+                        <p>The original action in 2018 to ensure a safe passage for the members.</p>
+                    </div>
+                </div>
+
+                <div class="image-card">
+                    <img src="https://i.pinimg.com/1200x/18/d7/94/18d794b2a73d4087b4268c2f7b247cc1.jpg" alt="BTS member V posing with a purple ribbon.">
+                    <div class="image-card-content">
+                        <h5>A Member's Heart</h5>
+                        <p>The heartfelt recognition of the project by V, making the color official.</p>
+                    </div>
+                </div>
+
+                <div class="image-card">
+                    <img src="https://i.pinimg.com/1200x/b1/22/21/b122217c23d3b70ce3c1143272a23727.jpg" alt="A large group of people holding purple ribbons together.">
+                    <div class="image-card-content">
+                        <h5>Global ARMY Unity</h5>
+                        <p>The project represents the worldwide, protective spirit of the fandom.</p>
+                    </div>
+                </div>
+
+            </div>
+            
     </section>
 
-    <section class="form-section" id="btn">
-        <form>
-            <h3>Fill the Form to join project</h3><br>
-            <label>Full Name : </label>
-            <input type="text" placeholder="Enter your name here" required><br>
-            <label>Email Id : </label>
-            <input type="email" placeholder="Enter your email here" required><br>
-            <label>Country : </label>
-            <input type="text" placeholder="Choose the country"><br>
-            <label>Phone Number : </label>
-            <input type="number" placeholder="Enter your phone number here" required><br>
-        </form>
-    </section>
+    <section class="form-section" id="join-section">
+            <form action="#" method="POST">
+                <h3>Fill the Form to Join Project</h3><br>
+                
+                <div class="form-group">
+                    <label for="name">Full Name :</label>
+                    <input type="text" id="name" name="name" placeholder="Enter your name here" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email Id :</label>
+                    <input type="email" id="email" name="email" placeholder="Enter your email here" required>
+                </div>
+                
+                
+                <div class="form-group">
+                    <label for="country">Country :</label>
+                    <select id="country" name="country" required>
+                        <option value="">-- Select Your Country --</option>
+                        <option value="ind">India</option>
+                        <option value="usa">United States</option>
+                        <option value="kor">South Korea</option>
+                        <option value="can">Canada</option>
+                        <option value="oth">Other</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="phone">Phone Number :</label>
+                    <input type="tel" id="phone" name="phone" oninput="this.value = this.value.replace(/[^0-9]/g, '')" 
+                    placeholder="Enter your phone number here" required>
+                </div>
+
+                <button type="submit" class="submit-button">Submit & Join Project</button>
+            </form>
+        </section>
 
     <footer>
-        <p>&copy; 2025 Purple Ribbon Project. All Rigths Reserved</p>
+        <p> &copy; 2025 Purple Ribbon Project. All Rigths Reserved</p>
 </footer>
+
+<script>
+    document.getElementById("country").addEventListener("change", validatePhone);
+    document.getElementById("phone").addEventListener("input", validatePhone);
+
+    function validatePhone() {
+        const country = document.getElementById("country").value;
+        const phone = document.getElementById("phone");
+        const number = phone.value;
+
+        let min = 0, max = 0;
+
+        if (country === "ind") {      
+            min = max = 10;
+        } else if (country === "usa") { 
+            min = max = 10;
+        } else if (country === "can") { 
+            min = max = 10;
+        } else if (country === "kor") { 
+            min = 10;  
+            max = 11;
+        } else {                      
+            min = 6;
+            max = 15;
+        }
+
+        phone.setAttribute("minlength", min);
+        phone.setAttribute("maxlength", max);
+    }
+</script>
 </body>
 </html>
